@@ -17,7 +17,7 @@ import (
 // configCmd represents the config command
 var configCmd = &cobra.Command{
 	Use:   "configure",
-	Short: "Config your AccessKey and SecretKey locally - 配置本地AccessKey和SecretKey",
+	Short: "Configure your AccessKey and SecretKey locally - 配置本地AccessKey和SecretKey",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. For example:
 
@@ -29,7 +29,7 @@ to quickly create a Cobra application.`,
 		cfg := model.ConfigFile{}
 		err := viper.Unmarshal(&cfg)
 		if err != nil {
-			log.Fatalln("failed to unmarshal config:", err)
+			log.Fatalln("failed to load config:", err)
 		}
 		// fmt.Println("ak: ", cfg.AccessKey)
 		// fmt.Println("sk: ", cfg.SecretKey)
